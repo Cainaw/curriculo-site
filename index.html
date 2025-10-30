@@ -5,34 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cainã Wanzeler — Desenvolvedor Full Stack</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  
   <style>
     :root{
       --bg: #fbf9f7;
       --card: #ffffff;
       --muted: #667085;
       --accent: #ffb577; /* laranja pastel */
-      --accent-600: #ffa94d;
+      --accent-600: #82674b;
       --shadow: 0 6px 18px rgba(15,23,42,0.08);
       --radius: 14px;
       --gap: 20px;
-      --maxw: 60rem;
+      --maxw: 90%;
     }
     *{
-        box-sizing:border-box
+        box-sizing:border-box;
     }
     html, body {
         height:100%;
         background:var(--bg);
         font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; 
-        color:#0f1724
+        color:#0f1724;
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
     }
+    
     .wrap {
-        max-width:var(--maxw);
-        margin:10px auto;
-        padding:2px
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px
     }
-
-    /* Header */
+    
     header {
         background:var(--card);
         border-radius:var(--radius);
@@ -44,32 +49,33 @@
         justify-content:space-between;
         padding: 1rem;
     }
-
+    
     .brand {
         font-weight:700;
         font-size: 1.5rem
     }
-
+    /*
     nav{
-        display:flex;
         gap:18px;
     }
+      */
+    
     nav a {
         color:var(--muted);
         text-decoration:none;
         font-weight:500
     }
-
-    /* Hero */
+    
     .hero {
         display: flex;
         flex-direction: row;
-        gap:28px;
+        gap: 28px;
         align-items:center;
         margin-top: 3rem;
         margin-bottom: 3rem;
         padding-left: 2rem;
     }
+    
     .avatar {
         width: 10rem;
         height:auto;
@@ -78,40 +84,48 @@
         align-items:center;
         justify-content:center;
     }
+    
     .avatar img {
-        width:15rem;
+        width: 12rem;
         height:auto;
         object-fit:cover;
         border-radius: 50%;
     }
+    
     .intro h1 {
         font-size:36px;
         margin:0 0 6px 0;
         line-height:1.02
     }
+    
     .intro p {
         font-size: 1.1rem;
         margin:0;
         color:var(--muted);
         font-weight:500
     }
+    
     .cta {
         display: flex;
-        gap: 12px;
-        margin-top:14px
+        flex-direction: row;
+        gap: 5px;
     }
+    
+    
     .btn {
+        white-space: nowrap;
+        width: auto;
         background:var(--accent);
         border:none;
-        padding:10px 16px;
-        border-radius:10px;
+        padding:8px 14px;
+        display: inline-block;
+        border-radius:5px;
         color:#fff;
         font-weight:600;
         cursor:pointer;
         box-shadow:0 6px 14px rgba(255,169,77,0.18)
     }
-
-    /* Section wrapper */
+    
     section.card {
         background:var(--card);
         border-radius:var(--radius);
@@ -119,13 +133,13 @@
         padding:18px;
         margin-top:26px
     }
+    
     section.card h2 {
         color:var(--accent-600);
         margin:0 0 12px 0;
         letter-spacing:0.6px
     }
-
-    /* Carousel */
+    
     .carousel {
         display:flex;
         gap:var(--gap);
@@ -133,37 +147,44 @@
         padding-bottom:6px;
         scroll-snap-type:x mandatory
     }
+    
     .carousel::-webkit-scrollbar {
         height:10px
     }
+    
     .carousel::-webkit-scrollbar-thumb {
         background:rgba(15,23,42,0.12);
         border-radius:6px
     }
+    
     .card-item {
-        flex:0 0 260px;
+        flex:0 0 auto;
+        width: 20vw;
+        max-width: 260px;
+        min-width: 150px;
         background:linear-gradient(180deg,#fff,#fbfbfb);
         border-radius:12px;
         padding:14px;
         scroll-snap-align:start;
         box-shadow:0 8px 22px rgba(15,23,42,0.06)
     }
-
+    
     .cert-logo {
         height:44px;
         display:flex;
         align-items:center;gap:10px
     }
+    
     .cert-logo img {
         height:36px
     }
+    
     .meta {
         color:var(--muted);
         font-size:13px;
         margin-top:8px
     }
-
-    /* Projects grid look like cards but still horizontal */
+    
     .project-thumb {
         height:120px;
         border-radius:8px;
@@ -173,9 +194,11 @@
         justify-content:center;
         margin-bottom:10px
     }
+    
     .project-title {
         font-weight:600
     }
+    
     .project-link {
         font-size:13px;
         color:var(--accent-600);
@@ -183,13 +206,13 @@
         margin-top:6px;
         display:inline-block
     }
-
-    /* Companies row */
+    
     .companies {
         display:flex;
         gap:12px;
         flex-wrap:wrap
     }
+    
     .company {
         flex:0 0 220px;
         padding:12px;
@@ -200,6 +223,7 @@
         align-items:center;
         gap:12px
     }
+    
     .company .logo {
         width:44px;
         height:44px;
@@ -208,14 +232,14 @@
         display:flex;align-items:center;
         justify-content:center
     }
-
-    /* Skills */
+    
     .skills {
         display:flex;
         gap:10px;
         flex-wrap:wrap;
         margin-top:8px
     }
+    
     .skill{
         background:rgba(255,169,77,0.12);
         color:#4a2b00;
@@ -224,54 +248,108 @@
         font-weight:600;
         font-size:13px
     }
-
+    
     footer {
         margin-top:28px;
         text-align:center;
         color:var(--muted);
         font-size:14px
     }
-
-    /* Responsive */
+    
     @media screen and (max-width:768px) {
+      .wrap {
+        padding: 2px 2px;
+      }
+      .intro h1 {
+        font-size: 1.5rem;
+      }
+      .intro p {
+        font-size: 0.8rem;
+      }
+      .avatar {
+        padding: 0 0px;
+      }
+      .avatar img {
+        width: 120px;
+      }
       section {
         display: block;
       }
+      /*
       body {
         display: flex;
         margin: 0;
         padding: 0;
-        -webkit-text-size-adjust: 100%;
+      }
+      */
+      .cta {
+        display: flex;
       }
       .btn {
-        padding: 8px 14px;
+        font-size: 0.5rem;
+        padding: 6px 7px;
+        margin: 0;
       }
       .hero {
         display: flex;
         padding: 0.4rem;
+        margin: 2rem;
         justify-content: center;
+        gap: 10px;
+      }
+      .card-item div {
+        width: 180px;
       }
       header nav {
         font-size: 0.8rem;
       }
       .brand {
-        font-size: 1.45rem;
+        font-size: 0.9rem;
+      }
+      .intro p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .intro h1 {
+        font-size: 1.3rem;
+      }
+      .intro p {
+        font-size: 0.65rem;
+      }
+      .card div {
+        font-size: 0.7rem;
+      }
+      .card-item {
+        width: 150px;
+      }
+      .card-item div {
+        width: 122px;
+        font-size: 0.7rem;
+      }
+      .icon-btn {
+        padding: 5px;
+      }
+      div.meta {
+        width: 122px;
+      }
+      nav a {
+        font-size: 0.55rem;
+        white-space: nowrap;
       }
     }
-
-    /* Drag hint */
+    
     .drag-hint {
         font-size:13px;
         color:var(--muted);
         margin-top:8px
     }
-
-    /* small controls */
+    
     .controls {
         display:flex;
         gap:8px;
         align-items:center
     }
+    
     .icon-btn {
         background:transparent;
         border:1px solid rgba(15,23,42,0.06);
@@ -279,7 +357,11 @@
         border-radius:8px;
         cursor:pointer
     }
+    section img {
+      width: 5rem;
+    }
   </style>
+  
 </head>
 <body>
   <div class="wrap">
@@ -294,7 +376,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="wrap">
       <section class="hero">
         <div class="avatar">
           <!-- Substitua pela sua foto -->
