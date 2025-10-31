@@ -35,7 +35,7 @@
     .wrap {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 16px
+        padding: 0 0px
     }
     
     header {
@@ -258,7 +258,7 @@
     
     @media screen and (max-width:768px) {
       .wrap {
-        padding: 2px 2px;
+        padding: 0px 0px;
       }
       .intro h1 {
         font-size: 1.5rem;
@@ -326,9 +326,6 @@
         width: 122px;
         font-size: 0.7rem;
       }
-      .icon-btn {
-        padding: 5px;
-      }
       div.meta {
         width: 122px;
       }
@@ -358,12 +355,12 @@
         cursor:pointer
     }
     section img {
-      width: 5rem;
+      width: 4rem;
     }
   </style>
   
 </head>
-<body>
+<body class="wrap">
   <div class="wrap">
     <header>
       <div class="brand">Cainã Wanzeler</div>
@@ -376,7 +373,7 @@
       </nav>
     </header>
 
-    <main class="wrap">
+    <main>
       <section class="hero">
         <div class="avatar">
           <!-- Substitua pela sua foto -->
@@ -405,6 +402,12 @@
           </div>
         </div>
         <div class="carousel" id="cert-carousel">
+          <div class="card-item">
+            <div class="cert-logo"><img src="imagens/Nexa - Fundamentos de IA Generativa com Bedrock.jpg" alt="IA Generativa"></div>
+            <div style="font-weight:600;margin-top:8px">DIO - Nexa</div>
+            <div class="meta">OUT 2025 · Fundamentos de IA Generativa com Bedrock</div>
+          </div>
+
           <div class="card-item">
             <div class="cert-logo"><img src="imagens/MySQL.jpg" alt="JDBC MySQL"></div>
             <div style="font-weight:600;margin-top:8px">DIO - Riachuelo</div>
